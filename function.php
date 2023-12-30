@@ -325,7 +325,7 @@ function hapus_data_menu()
 
     $file_gambar = ambil_data("SELECT * FROM menu WHERE id_menu = $id_menu")[0]["gambar"];
 
-    unlink("src/img/$file_gambar");
+    if (file_exists("src/img/$file_gambar")) unlink("src/img/$file_gambar");
 
 
 
